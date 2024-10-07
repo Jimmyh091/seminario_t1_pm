@@ -2,15 +2,15 @@ package com.example.seminario_t1_pm
 
 fun main(){
 
-    ordenarEjercicios(ej1(intArrayOf(4,5,6,39,3,4)), 1)
-    ordenarEjercicios(ej2(intArrayOf(10, 10, 10)), 2)
-    ordenarEjercicios(ej3(9.0), 3)
-    ordenarEjercicios(ej4("manuel"), 4)
-    ordenarEjercicios(ej5("acacaca", 'c'), 5)
-    ordenarEjercicios(ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde") ,6)
+    ordenarEjercicios( ej1(intArrayOf(4,5,6,39,3,4)), 1)
+    ordenarEjercicios( ej2(intArrayOf(10, 10, 10)), 2)
+    ordenarEjercicios( ej3(9.0), 3)
+    ordenarEjercicios( ej4("manuel"), 4)
+    ordenarEjercicios( ej5("acacaca", 'c'), 5)
+    ordenarEjercicios( ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde") ,6)
+    ordenarEjercicios( ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."),7)
+    ordenarEjercicios(ej8(245) ,8)
     /*
-    ordenarEjercicios( ,7)
-    ordenarEjercicios( ,8)
     ordenarEjercicios( ,9)
     ordenarEjercicios( ,10)
     ordenarEjercicios( ,11)
@@ -44,7 +44,7 @@ fun main(){
 
 fun <T> ordenarEjercicios (res: T, numero: Int){
     println("\nEjercicio $numero:" +
-            "\n$res")
+            "\n$res\n")
 }
 
 /*Ejercicio 1. Crea una función que obtenga el número máximo de una lista de
@@ -134,3 +134,52 @@ fun ej6(texto: String, textoBuscado: String) : String{
     return resultado
 }
 
+/*Ejercicio 7. Crea una función que pone en mayúscula la primera letra de cada
+palabra de un texto */
+fun ej7(texto: String) : String {
+
+    var palabras = texto.split(' ').toMutableList()
+
+    for (it in 0 until palabras.size){
+        var resultado : String = palabras[it].get(0).uppercaseChar().toString()
+
+        for (it2 in 1 until palabras[it].length){
+            resultado += palabras[it].get(it2)
+        }
+
+        palabras[it] = resultado
+    }
+
+    var textoFinal = ""
+    for (it in 0 until palabras.size){
+        textoFinal += palabras[it] + " "
+    }
+
+    var resultado = "Texto con la 1era en mayuscula:\n$textoFinal"
+    return resultado
+}
+
+/*Ejercicio 8. Crea una función que sume los dígitos de un número. Ejemplo:
+sumaDigitos(245) = 2 + 4 + 5 = 11*/
+fun ej8(num: Int) : String {
+
+    var numLength = "" + num
+    var listaNum = IntArray(numLength.length)
+
+    var divisor = 10
+    for (it in 0 until listaNum.size){
+
+        var resAux = num % divisor
+        listaNum[it] =
+        divisor *= 10
+    }
+
+    var suma = 0
+
+    for (it in 0 until listaNum.size){
+        suma += listaNum[it]
+    }
+
+    var resultado = "Suma de los digitos: $suma"
+    return resultado
+}
