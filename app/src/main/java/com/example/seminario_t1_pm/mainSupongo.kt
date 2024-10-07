@@ -166,11 +166,12 @@ fun ej8(num: Int) : String {
     var numLength = "" + num
     var listaNum = IntArray(numLength.length)
 
-    var divisor = 10
+    var divisor = 1
     for (it in 0 until listaNum.size){
 
-        var resAux = num % divisor
-        listaNum[it] =
+        var resAux = (num % (divisor * 10)) / divisor
+
+        listaNum[it] = resAux
         divisor *= 10
     }
 
