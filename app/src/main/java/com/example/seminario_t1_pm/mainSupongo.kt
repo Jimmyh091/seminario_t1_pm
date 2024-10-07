@@ -1,17 +1,55 @@
 package com.example.seminario_t1_pm
 
 fun main(){
-    println(ej1(intArrayOf(4,5,6,39,3,4)))
-    println(ej2(intArrayOf(10, 10, 10)))
-    println(ej3(9.0))
-    println(ej4("manuel"))
-    println(ej5("acacaca", 'c'))
-    println(ej6("abcdfabcdfabcdfabcdf", "abc"))
+
+    ordenarEjercicios(ej1(intArrayOf(4,5,6,39,3,4)), 1)
+    ordenarEjercicios(ej2(intArrayOf(10, 10, 10)), 2)
+    ordenarEjercicios(ej3(9.0), 3)
+    ordenarEjercicios(ej4("manuel"), 4)
+    ordenarEjercicios(ej5("acacaca", 'c'), 5)
+    ordenarEjercicios(ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde") ,6)
+    /*
+    ordenarEjercicios( ,7)
+    ordenarEjercicios( ,8)
+    ordenarEjercicios( ,9)
+    ordenarEjercicios( ,10)
+    ordenarEjercicios( ,11)
+    ordenarEjercicios( ,12)
+    ordenarEjercicios( ,13)
+    ordenarEjercicios( ,14)
+    ordenarEjercicios( ,15)
+    ordenarEjercicios( ,16)
+    ordenarEjercicios( ,17)
+    ordenarEjercicios( ,18)
+    ordenarEjercicios( ,19)
+    ordenarEjercicios( ,20)
+    ordenarEjercicios( ,21)
+    ordenarEjercicios( ,22)
+    ordenarEjercicios( ,23)
+    ordenarEjercicios( ,24)
+    ordenarEjercicios( ,25)
+    ordenarEjercicios( ,26)
+    ordenarEjercicios( ,27)
+    ordenarEjercicios( ,28)
+    ordenarEjercicios( ,29)
+    ordenarEjercicios( ,30)
+    ordenarEjercicios( ,31)
+    ordenarEjercicios( ,32)
+    ordenarEjercicios( ,33)
+    ordenarEjercicios( ,34)
+    ordenarEjercicios( ,35)
+    ordenarEjercicios( ,36)
+    */
+}
+
+fun <T> ordenarEjercicios (res: T, numero: Int){
+    println("\nEjercicio $numero:" +
+            "\n$res")
 }
 
 /*Ejercicio 1. Crea una función que obtenga el número máximo de una lista de
     números*/
-fun ej1(lista: IntArray) : Int{
+fun ej1(lista: IntArray) : String{
 
     var num = lista[0]
 
@@ -19,38 +57,51 @@ fun ej1(lista: IntArray) : Int{
         if (it > num) num = it
     }
 
-    return num
+    var resultado = "Numero maximo: $num"
+    return resultado
 }
 
 /*Ejercicio 2. Crea una función que obtenga la sumatoria de una lista de números*/
-fun ej2(lista: IntArray) : Int{
+fun ej2(lista: IntArray) : String{
     var res = 0
 
     for (it in 0 until lista.size){
         res += lista[it]
     }
 
-    return res
+    var resultado = "Sumatoria de la lista: $res"
+    return resultado
 }
 
 /*Ejercicio 3. Crea una función que dada una distancia en millas calcule su
 correspondiente en kms*/
-fun ej3(millas: Double) : Double {
-    return millas * 1.60934
+fun ej3(millas: Double) : String {
+
+    var kilometros = millas * 1.60934
+
+    var resultado = "$millas en millas es $kilometros en kilometros"
+    return resultado
 }
 
 /*Ejercicio 4. Crea una función que determine si una cadena de texto es un
 palíndromo*/
-fun ej4(palabra: String) : Boolean{
+fun ej4(palabra: String) : String{
 
     val palabraAux = palabra.reversed()
 
-    return palabra == palabraAux
+
+    var resultado = "$palabra "
+
+    if (palabra != palabraAux) resultado += "no "
+
+    resultado += "es palindromo"
+
+    return resultado
 }
 
 /*Ejercicio 5. Crea una función que cuenta cuántas veces aparece una letra en un
 texto.*/
-fun ej5(texto: String, letra: Char) : Int{
+fun ej5(texto: String, letra: Char) : String{
 
     var veces = 0
 
@@ -58,34 +109,28 @@ fun ej5(texto: String, letra: Char) : Int{
         if (texto.get(it) == letra) veces++
     }
 
-    return veces
+    var resultado = "Veces que aparece '$letra': $veces"
+    return resultado
 }
 
 /*Ejercicio 6. Crea una función que cuenta cuántas veces aparece una subcadena en
 un texto.*/
-fun ej6(texto: String, textoBuscado: String) : Int{
+fun ej6(texto: String, textoBuscado: String) : String{
     var veces = 0
 
     for (it in 0 until texto.length){
 
         if (texto.get(it) == textoBuscado.get(0)){
 
-            var contador = 0
-            var igual = true
-
-            for (it2 in it until textoBuscado.length){
-                contador = it2
-
-                if (texto.get(it2) != textoBuscado.get(it2 - it)){
-                    igual = false
-                }
-                println("iterador: $it2")
+            var linea: String = ""
+            for (it2 in it until it + textoBuscado.length){
+                linea += texto.get(it2)
             }
-
-            println("longitud: ${textoBuscado.length}")
-            if (contador == textoBuscado.length - 1 && igual) veces++
+            if (linea.equals(textoBuscado)) veces++
         }
     }
 
-    return veces
+    var resultado = "Veces que aparece \"$textoBuscado\": $veces"
+    return resultado
 }
+
