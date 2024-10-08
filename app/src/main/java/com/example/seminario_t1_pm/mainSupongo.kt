@@ -238,6 +238,7 @@ fun ej17(){
 
 /*Ejercicio 18: Crea una función que determine si un número es primo.*/
 fun ej18(){
+    jygcytgc
 
 }
 
