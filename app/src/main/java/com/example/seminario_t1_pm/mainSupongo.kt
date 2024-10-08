@@ -184,3 +184,173 @@ fun ej8(num: Int) : String {
     var resultado = "Suma de los digitos: $suma"
     return resultado
 }
+
+/*Ejercicio 9. Crea una función que calcule el máximo común divisor de dos números
+naturales*/
+fun ej9(){
+
+}
+
+/*Ejercicio 10. Crea una función que calcule el término n-ésimo de la sucesión de Finbonacci.*/
+fun ej10(){
+
+}
+
+/*Ejercicio 11. Crea una función que determine si dos números son primos relativos.*/
+fun ej11(){
+
+}
+
+/*Ejercicio 12. Crea una función que determine si un número dado es capicúa*/
+fun ej12(){
+
+}
+
+/*Ejercicio 13. Crea una función que dada una cadena de texto con formato Emmet
+devuelva su correspondiente etiqueta HTML, teniendo en cuenta sólo los atributos
+de clase e id.*/
+fun ej13(){
+
+}
+
+/*Ejercicio 14. Crea una función que dado un número n imprima el siguiente ‘mosaico’*/
+fun ej14(){
+
+}
+
+/*Ejercicio 15. Crear una función que reciba dos arrays de enteros y devuelva un array de booleanos
+que determine si los elementos, uno a uno, de ambos arrays son iguales*/
+fun ej15(){
+
+}
+
+/*Ejercicio 16: Crea una función que calcule el producto de todos los elementos en
+una lista de números.*/
+fun ej16(){
+
+}
+
+/*Ejercicio 17: Crea una función que dada una lista de números, devuelva una nueva
+lista con solo los números pares.*/
+fun ej17(){
+
+}
+
+/*Ejercicio 18: Crea una función que determine si un número es primo.*/
+fun ej18(){
+
+}
+
+/*Ejercicio 19: Crea una función que, dada una cadena de texto, elimine todas las
+vocales de la cadena.*/
+fun ej19(){
+
+}
+
+/*Ejercicio 20: Crea una función que calcule el factorial de un número.*/
+fun ej20(){
+
+}
+
+/*Ejercicio 21: Crea una función que invierta una cadena de texto. Por ejemplo, "hola" debería convertirse en
+"aloh".*/
+fun ej21(){
+
+}
+
+/*Ejercicio 22: Crea una función que, dado un número, devuelva True si es un número perfecto (la suma de
+sus divisores propios positivos es igual al número), o False en caso contrario.*/
+fun ej22(){
+
+}
+
+/*Ejercicio 23: Crea una función que, dado un número entero, devuelva True si es un número Armstrong (un
+número que es igual a la suma de sus propios dígitos elevados a una potencia). Por ejemplo, 153 es un
+número Armstrong porque 1^3 + 5^3 + 3^3 = 153.*/
+fun ej23(){
+
+}
+
+/*Ejercicio 24: Crea una función que encuentre el número más grande en una matriz bidimensional
+(una lista de listas).*/
+fun ej24(){
+
+}
+
+/*Ejercicio 25: Crea una función que encuentre el número más pequeño en una matriz
+bidimensional (una lista de listas).*/
+fun ej25(){
+
+}
+
+/*Ejercicio 26: Crea una función que, dada una lista de palabras, devuelva la palabra más larga.*/
+fun ej26(){
+
+}
+
+/*Ejercicio 27: Crea una función que, dada una lista de palabras, devuelva la palabra más corta.*/
+fun ej27(){
+
+}
+
+/*Ejercicio 28: Crea una función que determine si una cadena de texto contiene solo
+caracteres alfabéticos (letras) y espacios en blanco.*/
+fun ej28(){
+
+}
+
+/*Ejercicio 29: Crea una función que determine si una cadena de texto es un
+anagrama de otra cadena. Dos palabras son anagramas si tienen las mismas letras,
+pero en un orden diferente.*/
+fun ej29(){
+
+}
+
+/*Ejercicio 30: Crea una función que, dado un número entero, devuelva True si es un
+número triangular (puede representarse como un triángulo equilátero de puntos), o
+False en caso contrario.*/
+fun ej30(){
+
+}
+
+
+// SUBIR NOTA //
+
+/*Ejercicio 31: Duplicar Elementos en una Lista
+Escribe una función que tome una lista de números y utilice la función map para
+duplicar cada número en la lista. La función debe devolver una nueva lista con
+todos los números duplicados.*/
+fun ej31(){
+
+}
+
+/*Ejercicio 32: Crear un Diccionario a partir de Listas
+Escribe una función que tome dos listas, una lista de claves y otra lista de valores, y
+cree un diccionario utilizando mapOf para combinar las listas en un diccionario
+clave-valor. La función debe devolver el diccionario resultante.*/
+fun ej32(){
+
+}
+
+/*Ejercicio 33: Crea un programa se encargue de transformar un número decimal a
+binario sin utilizar funciones propias del lenguaje que lo hagan directamente.*/
+fun ej33(){
+
+}
+
+/*Ejercicio 34: Crea una función que sea capaz de encriptar y desencriptar texto
+utilizando el algoritmo de encriptación de Karaca (debes buscar información sobre
+él).*/
+fun ej34(){
+
+}
+
+/*Ejercicio 35: Crea una función que ordene y retorne una matriz de números.
+- La función recibirá un listado (por ejemplo [2, 4, 6, 8, 9]) y un parámetro adicional
+- "Asc" o "Desc" para indicar si debe ordenarse de menor a mayor o de mayor a
+menor.
+- No se pueden utilizar funciones propias del lenguaje que lo resuelvan
+automáticamente.*/
+fun ej35(){
+
+}
