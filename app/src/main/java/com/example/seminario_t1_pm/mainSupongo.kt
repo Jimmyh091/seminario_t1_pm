@@ -9,11 +9,11 @@ fun main(){
     ordenarEjercicios( ej5("acacaca", 'c'), 5)
     ordenarEjercicios( ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde") ,6)
     ordenarEjercicios( ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."),7)
-    ordenarEjercicios(ej8(245) ,8)
+    ordenarEjercicios( ej8(245) ,8)
+    ordenarEjercicios( ej9(84, 70) ,9)
+    ordenarEjercicios( ej10(11),10)
+    ordenarEjercicios( ej11(20, 20) ,11)
     /*
-    ordenarEjercicios( ,9)
-    ordenarEjercicios( ,10)
-    ordenarEjercicios( ,11)
     ordenarEjercicios( ,12)
     ordenarEjercicios( ,13)
     ordenarEjercicios( ,14)
@@ -38,7 +38,6 @@ fun main(){
     ordenarEjercicios( ,33)
     ordenarEjercicios( ,34)
     ordenarEjercicios( ,35)
-    ordenarEjercicios( ,36)
     */
 }
 
@@ -187,18 +186,76 @@ fun ej8(num: Int) : String {
 
 /*Ejercicio 9. Crea una función que calcule el máximo común divisor de dos números
 naturales*/
-fun ej9(){
+fun ej9(num1: Int, num2: Int) : String{
 
+    val numMax: Int
+
+    if  (num1 >= num2) numMax = num1
+    else numMax = num2
+
+    var mcd = 0
+    for (it in 1 .. numMax / 2){
+
+        if (num1 % it == 0 && num2 % it == 0){
+            mcd = it
+        }
+    }
+
+    var resultado : String
+
+    if  (mcd == 1) resultado = "No existe el MCD de $num1 y $num2 porque es 1"
+    else resultado = "El MCD de $num1 y $num2 es $mcd"
+
+    return resultado
 }
 
 /*Ejercicio 10. Crea una función que calcule el término n-ésimo de la sucesión de Finbonacci.*/
-fun ej10(){
+fun ej10(veces: Int) : String{
 
+    // podria hacer esto mismo con otra variable pero me ha apetecido fumar mucho
+
+    var resFibo = 0
+    var num1 = 0
+    var num2 = 1
+
+    for (it in 2 .. veces){
+
+        resFibo = num1 + num2
+
+        num1 = num2
+        num2 = resFibo
+
+    }
+
+    var resultado = "El termino numero $veces de la serie Fibonacci es $resFibo"
+    return resultado
 }
 
 /*Ejercicio 11. Crea una función que determine si dos números son primos relativos.*/
-fun ej11(){
+fun ej11(num1: Int, num2: Int) : String{
 
+    val numMax: Int
+
+    if  (num1 >= num2) numMax = num1
+    else numMax = num2
+
+    var mcd = 0
+    for (it in 1 .. numMax / 2){
+
+        if (num1 % it == 0 && num2 % it == 0){
+            mcd = it
+        }
+    }
+
+    var resultado = "Los numeros $num1 y $num2 "
+
+    if (mcd != 1){
+        resultado += "no "
+    }
+
+    resultado += "son primos relativos"
+
+    return resultado
 }
 
 /*Ejercicio 12. Crea una función que determine si un número dado es capicúa*/
@@ -238,7 +295,6 @@ fun ej17(){
 
 /*Ejercicio 18: Crea una función que determine si un número es primo.*/
 fun ej18(){
-    jygcytgc
 
 }
 
