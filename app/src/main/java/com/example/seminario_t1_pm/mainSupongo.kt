@@ -17,8 +17,8 @@ fun main(){
     ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
     ordenarEjercicios( 14, ej14(6))
     ordenarEjercicios( 15, ej15(intArrayOf(2,3,5,7,2), intArrayOf(2,7,5,5,2)))
+    ordenarEjercicios( 16, ej16(intArrayOf(2,3,5,7,2)))
     /*
-    ordenarEjercicios( 16, )
     ordenarEjercicios( 17, )
     ordenarEjercicios( 18, )
     ordenarEjercicios( 19, )
@@ -387,8 +387,22 @@ fun ej15(lista1: IntArray, lista2: IntArray) : String{
 
 /*Ejercicio 16: Crea una función que calcule el producto de todos los elementos en
 una lista de números.*/
-fun ej16(){
+fun ej16(lista: IntArray) : String{
+    var res = lista.get(0)
 
+    for (it in 1 until lista.size){
+        res *= lista.get(it)
+    }
+
+    var resultado = "El producto de ${lista.get(0)}"
+
+    for (it in 1 until lista.size){
+        resultado += ", ${lista.get(it)}"
+    }
+
+    resultado += " es $res"
+
+    return resultado
 }
 
 /*Ejercicio 17: Crea una función que dada una lista de números, devuelva una nueva
