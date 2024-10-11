@@ -345,12 +345,42 @@ fun ej14(veces: Int){
         piramide += "\n"
     }
 
-    println(piramide)
+
 }
 
 /*Ejercicio 15. Crear una función que reciba dos arrays de enteros y devuelva un array de booleanos
 que determine si los elementos, uno a uno, de ambos arrays son iguales*/
-fun ej15(){
+fun ej15(lista1: IntArray, lista2: IntArray){
+
+    val listaBool = BooleanArray(lista1.size)
+
+    for (it in 0 until lista1.size){
+        listaBool.set(it, lista1.get(it) == lista2.get(it))
+    }
+
+    var resultado = "Lista 1: ${lista1.get(0)}"
+
+    for (it in 1 until lista1.size){
+        resultado += ", ${lista1.get(it)}"
+    }
+
+    resultado += "\nLista 2: ${lista2.get(0)}"
+
+    for (it in 1 until lista2.size){
+        resultado += ", ${lista2.get(it)}"
+    }
+
+    resultado += "Lista B: ${listaBool.get(0)}"
+
+    if (listaBool.get(0)) resultado += "T"
+    else resultado += "F"
+
+    for (it in 1 until listaBool.size){
+
+        if (listaBool.get(it)) resultado += ", T"
+        else resultado += "F"
+    }
+
 
 }
 
