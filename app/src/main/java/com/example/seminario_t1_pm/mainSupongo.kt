@@ -16,8 +16,8 @@ fun main(){
     ordenarEjercicios( 12, ej12(47574))
     ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
     ordenarEjercicios( 14, ej14(6))
+    ordenarEjercicios( 15, ej15(IntArray(2,3,5,7,2), IntArray(2,7,5,5,2)))
     /*
-    ordenarEjercicios( 15, )
     ordenarEjercicios( 16, )
     ordenarEjercicios( 17, )
     ordenarEjercicios( 18, )
@@ -334,7 +334,7 @@ fun ej13(linea: String) : String {
 }
 
 /*Ejercicio 14. Crea una función que dado un número n imprima el siguiente ‘mosaico’*/
-fun ej14(veces: Int){
+fun ej14(veces: Int) : String{
 
     var piramide = ""
 
@@ -345,12 +345,13 @@ fun ej14(veces: Int){
         piramide += "\n"
     }
 
-
+    var resultado = "Piramide de $veces pisos:\n\n$piramide"
+    return resultado
 }
 
 /*Ejercicio 15. Crear una función que reciba dos arrays de enteros y devuelva un array de booleanos
 que determine si los elementos, uno a uno, de ambos arrays son iguales*/
-fun ej15(lista1: IntArray, lista2: IntArray){
+fun ej15(lista1: IntArray, lista2: IntArray) : String{
 
     val listaBool = BooleanArray(lista1.size)
 
@@ -381,7 +382,7 @@ fun ej15(lista1: IntArray, lista2: IntArray){
         else resultado += "F"
     }
 
-
+    return resultado
 }
 
 /*Ejercicio 16: Crea una función que calcule el producto de todos los elementos en
