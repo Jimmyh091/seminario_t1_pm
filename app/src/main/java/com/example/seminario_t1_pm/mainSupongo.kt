@@ -2,20 +2,20 @@ package com.example.seminario_t1_pm
 
 fun main(){
 
-    ordenarEjercicios( ej1(intArrayOf(4,5,6,39,3,4)), 1)
-    ordenarEjercicios( ej2(intArrayOf(10, 10, 10)), 2)
-    ordenarEjercicios( ej3(9.0), 3)
-    ordenarEjercicios( ej4("manuel"), 4)
-    ordenarEjercicios( ej5("acacaca", 'c'), 5)
-    ordenarEjercicios( ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde") ,6)
-    ordenarEjercicios( ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."),7)
-    ordenarEjercicios( ej8(245) ,8)
-    ordenarEjercicios( ej9(84, 70) ,9)
-    ordenarEjercicios( ej10(11),10)
-    ordenarEjercicios( ej11(20, 20) ,11)
+    ordenarEjercicios( 1, ej1(intArrayOf(4,5,6,39,3,4)))
+    ordenarEjercicios( 2, ej2(intArrayOf(10, 10, 10)))
+    ordenarEjercicios( 3, ej3(9.0))
+    ordenarEjercicios( 4, ej4("manuel"))
+    ordenarEjercicios( 5,  ej5("acacaca", 'c'))
+    ordenarEjercicios( 6, ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde"))
+    ordenarEjercicios( 7, ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."))
+    ordenarEjercicios( 8,  ej8(245))
+    ordenarEjercicios( 9, ej9(84, 70))
+    ordenarEjercicios( 10, ej10(11))
+    ordenarEjercicios( 11, ej11(20, 20))
+    ordenarEjercicios( 12, ej12(47574))
+    ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
     /*
-    ordenarEjercicios( ,12)
-    ordenarEjercicios( ,13)
     ordenarEjercicios( ,14)
     ordenarEjercicios( ,15)
     ordenarEjercicios( ,16)
@@ -41,7 +41,7 @@ fun main(){
     */
 }
 
-fun <T> ordenarEjercicios (res: T, numero: Int){
+fun <T> ordenarEjercicios (numero: Int, res: T){
     println("\nEjercicio $numero:" +
             "\n$res\n")
 }
@@ -259,14 +259,77 @@ fun ej11(num1: Int, num2: Int) : String{
 }
 
 /*Ejercicio 12. Crea una función que determine si un número dado es capicúa*/
-fun ej12(){
+fun ej12(num: Int) : String{
 
+    val numAux = "" + num
+    val numReversed = numAux.reversed()
+
+    var booleano = numAux.equals(numReversed)
+
+    var resultado = "El numero $num "
+    if (!booleano) resultado += "no "
+    resultado += "es capicuo"
+
+    return resultado
 }
 
 /*Ejercicio 13. Crea una función que dada una cadena de texto con formato Emmet
 devuelva su correspondiente etiqueta HTML, teniendo en cuenta sólo los atributos
 de clase e id.*/
-fun ej13(){
+fun ej13(linea: String) : String {
+
+    var nombre = ""
+    var emmetClass = ""
+    var emmetId = ""
+
+    var nombreEncontrado = false
+    var puntoEncontrado = false
+    var almohadillaEncontrada = false
+
+
+    for (it in 0 until linea.length){
+
+        if (linea.get(it) != '.' && !nombreEncontrado){
+
+            nombre += linea.get(it)
+
+        }else{
+
+            nombreEncontrado = true
+
+            if (linea.get(it) != '#' && !puntoEncontrado){
+
+                if (linea.get(it) != '.'){
+                    emmetClass += linea.get(it)
+                }
+            }else{
+
+                puntoEncontrado = true
+
+                if (linea.get(it) != '#'){
+                    emmetId += linea.get(it)
+                }else{
+                    almohadillaEncontrada = true
+                }
+
+            }
+        }
+    }
+
+    var lineaHTML = "<$nombre"
+
+    if (puntoEncontrado){
+        lineaHTML += " class=\"$emmetClass\""
+    }
+    if (almohadillaEncontrada){
+        lineaHTML += " id=\"$emmetId\""
+    }
+
+    lineaHTML += "></$nombre>"
+
+    var resultado = "Linea Emmet: $linea\nLinea HTML: $lineaHTML"
+
+    return resultado
 
 }
 
