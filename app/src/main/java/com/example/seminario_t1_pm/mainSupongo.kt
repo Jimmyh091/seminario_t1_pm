@@ -16,7 +16,7 @@ fun main(){
     ordenarEjercicios( 12, ej12(47574))
     ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
     ordenarEjercicios( 14, ej14(6))
-    ordenarEjercicios( 15, ej15(IntArray(2,3,5,7,2), IntArray(2,7,5,5,2)))
+    ordenarEjercicios( 15, ej15(intArrayOf(2,3,5,7,2), intArrayOf(2,7,5,5,2)))
     /*
     ordenarEjercicios( 16, )
     ordenarEjercicios( 17, )
@@ -371,7 +371,7 @@ fun ej15(lista1: IntArray, lista2: IntArray) : String{
         resultado += ", ${lista2.get(it)}"
     }
 
-    resultado += "Lista B: ${listaBool.get(0)}"
+    resultado += "\nLista B: "
 
     if (listaBool.get(0)) resultado += "T"
     else resultado += "F"
@@ -379,7 +379,7 @@ fun ej15(lista1: IntArray, lista2: IntArray) : String{
     for (it in 1 until listaBool.size){
 
         if (listaBool.get(it)) resultado += ", T"
-        else resultado += "F"
+        else resultado += ", F"
     }
 
     return resultado
