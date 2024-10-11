@@ -15,29 +15,29 @@ fun main(){
     ordenarEjercicios( 11, ej11(20, 20))
     ordenarEjercicios( 12, ej12(47574))
     ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
+    ordenarEjercicios( 14, ej14(6))
     /*
-    ordenarEjercicios( ,14)
-    ordenarEjercicios( ,15)
-    ordenarEjercicios( ,16)
-    ordenarEjercicios( ,17)
-    ordenarEjercicios( ,18)
-    ordenarEjercicios( ,19)
-    ordenarEjercicios( ,20)
-    ordenarEjercicios( ,21)
-    ordenarEjercicios( ,22)
-    ordenarEjercicios( ,23)
-    ordenarEjercicios( ,24)
-    ordenarEjercicios( ,25)
-    ordenarEjercicios( ,26)
-    ordenarEjercicios( ,27)
-    ordenarEjercicios( ,28)
-    ordenarEjercicios( ,29)
-    ordenarEjercicios( ,30)
-    ordenarEjercicios( ,31)
-    ordenarEjercicios( ,32)
-    ordenarEjercicios( ,33)
-    ordenarEjercicios( ,34)
-    ordenarEjercicios( ,35)
+    ordenarEjercicios( 15, )
+    ordenarEjercicios( 16, )
+    ordenarEjercicios( 17, )
+    ordenarEjercicios( 18, )
+    ordenarEjercicios( 19, )
+    ordenarEjercicios( 20, )
+    ordenarEjercicios( 21, )
+    ordenarEjercicios( 22, )
+    ordenarEjercicios( 23, )
+    ordenarEjercicios( 24, )
+    ordenarEjercicios( 25, )
+    ordenarEjercicios( 26, )
+    ordenarEjercicios( 27, )
+    ordenarEjercicios( 28, )
+    ordenarEjercicios( 29, )
+    ordenarEjercicios( 30, )
+    ordenarEjercicios( 31, )
+    ordenarEjercicios( 32, )
+    ordenarEjercicios( 33, )
+    ordenarEjercicios( 34, )
+    ordenarEjercicios( 35, )
     */
 }
 
@@ -334,8 +334,18 @@ fun ej13(linea: String) : String {
 }
 
 /*Ejercicio 14. Crea una función que dado un número n imprima el siguiente ‘mosaico’*/
-fun ej14(){
+fun ej14(veces: Int){
 
+    var piramide = ""
+
+    for (it in 1 until veces){
+        for (it2 in 1 .. it){
+            piramide += it
+        }
+        piramide += "\n"
+    }
+
+    println(piramide)
 }
 
 /*Ejercicio 15. Crear una función que reciba dos arrays de enteros y devuelva un array de booleanos
