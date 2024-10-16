@@ -24,8 +24,8 @@ fun main(){
     ordenarEjercicios( 20, ej20(5))
     ordenarEjercicios( 21, ej21("nahuel"))
     ordenarEjercicios( 22, ej22(28))
+    ordenarEjercicios( 23, ej23(153))
     /*
-    ordenarEjercicios( 23, )
     ordenarEjercicios( 24, )
     ordenarEjercicios( 25, )
     ordenarEjercicios( 26, )
@@ -496,7 +496,36 @@ número que es igual a la suma de sus propios dígitos elevados a una potencia).
 número Armstrong porque 1^3 + 5^3 + 3^3 = 153.*/
 fun ej23(num: Int) : String{
 
-    var
+    var numStr = "" + num
+    val numLength = numStr.length
+
+    var res = 0.0
+    var divisor = 1
+
+    var listaNum = IntArray(numLength)
+    for (it in 0 until numLength){
+
+        var resAux = (num % (divisor * 10)) / divisor
+
+        listaNum[it] = resAux
+        divisor *= 10
+    }
+
+    for (it in 0 until numLength){
+        var a : Double = listaNum. get(it).toDouble()
+        var b : Double = numLength.toDouble()
+
+        res += Math.pow(a, b)
+    }
+
+    var esAmstrong = num.toDouble() == res
+
+    var resultado = "El numero $num "
+
+    if (esAmstrong) resultado += "no "
+
+    resultado += "es un numero Amstrong"
+    return resultado
 }
 
 /*Ejercicio 24: Crea una función que encuentre el número más grande en una matriz bidimensional
