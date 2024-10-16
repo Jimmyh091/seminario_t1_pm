@@ -2,15 +2,15 @@ package com.example.seminario_t1_pm
 
 fun main(){
 
-    ordenarEjercicios( 1, ej1(intArrayOf(4,5,6,39,3,4)))
-    ordenarEjercicios( 2, ej2(intArrayOf(10, 10, 10)))
-    ordenarEjercicios( 3, ej3(9.0))
-    ordenarEjercicios( 4, ej4("manuel"))
+    ordenarEjercicios( 1,  ej1(intArrayOf(4,5,6,39,3,4)))
+    ordenarEjercicios( 2,  ej2(intArrayOf(10, 10, 10)))
+    ordenarEjercicios( 3,  ej3(9.0))
+    ordenarEjercicios( 4,  ej4("manuel"))
     ordenarEjercicios( 5,  ej5("acacaca", 'c'))
-    ordenarEjercicios( 6, ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde"))
-    ordenarEjercicios( 7, ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."))
+    ordenarEjercicios( 6,  ej6("abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", "abcde"))
+    ordenarEjercicios( 7,  ej7("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."))
     ordenarEjercicios( 8,  ej8(245))
-    ordenarEjercicios( 9, ej9(84, 70))
+    ordenarEjercicios( 9,  ej9(84, 70))
     ordenarEjercicios( 10, ej10(11))
     ordenarEjercicios( 11, ej11(20, 20))
     ordenarEjercicios( 12, ej12(47574))
@@ -18,13 +18,13 @@ fun main(){
     ordenarEjercicios( 14, ej14(6))
     ordenarEjercicios( 15, ej15(intArrayOf(2,3,5,7,2), intArrayOf(2,7,5,5,2)))
     ordenarEjercicios( 16, ej16(intArrayOf(2,3,5,7,2)))
+    ordenarEjercicios( 17, ej17(intArrayOf(2,3,4,6,78,6,54,4,54,6,787,8,8,7,65,5,4,3)))
+    ordenarEjercicios( 18, ej18(877))
+    ordenarEjercicios( 19, ej19("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."))
+    ordenarEjercicios( 20, ej20(5))
+    ordenarEjercicios( 21, ej21("nahuel"))
+    ordenarEjercicios( 22, ej22(28))
     /*
-    ordenarEjercicios( 17, )
-    ordenarEjercicios( 18, )
-    ordenarEjercicios( 19, )
-    ordenarEjercicios( 20, )
-    ordenarEjercicios( 21, )
-    ordenarEjercicios( 22, )
     ordenarEjercicios( 23, )
     ordenarEjercicios( 24, )
     ordenarEjercicios( 25, )
@@ -407,43 +407,96 @@ fun ej16(lista: IntArray) : String{
 
 /*Ejercicio 17: Crea una función que dada una lista de números, devuelva una nueva
 lista con solo los números pares.*/
-fun ej17(){
+fun ej17(lista: IntArray) : String{
+    val listaRes = mutableListOf<Int>()
 
+    lista.forEach { if (it % 2 == 0) listaRes.add(it) }
+
+    var resultado = "Lista inicial:\n${lista.get(0)}"
+    lista.forEach{ resultado += ", $it" }
+
+    resultado += "\n\nLista de pares:\n${listaRes.get(0)}"
+    listaRes.forEach(){ resultado += ", $it" }
+
+    return resultado
 }
 
 /*Ejercicio 18: Crea una función que determine si un número es primo.*/
-fun ej18(){
+fun ej18(num: Int) : String{
+    val mitad = num/2
 
+    var esPrimo = true
+    for (it in 2 .. mitad){
+        if (num % it == 0){
+            esPrimo = false
+            break
+        }
+    }
+
+    var resultado = "El numero $num "
+
+    if (!esPrimo) resultado += "no "
+
+    resultado += "es primo"
+    return resultado
 }
 
 /*Ejercicio 19: Crea una función que, dada una cadena de texto, elimine todas las
 vocales de la cadena.*/
-fun ej19(){
+fun ej19(texto: String) : String{
+    var res = texto.replace("[aAeEiIoOuU]".toRegex(),"")
 
+    var resultado = "Texto original:\n$texto\n\nTexto sin vocales:\n$res"
+    return resultado
 }
 
 /*Ejercicio 20: Crea una función que calcule el factorial de un número.*/
-fun ej20(){
+fun ej20(num: Int) : String{
+    var res = 1
 
+    for (it in 1 .. num){
+        res *= it
+    }
+
+    var resultado = "El factorial de $num es $res"
+    return resultado
 }
 
 /*Ejercicio 21: Crea una función que invierta una cadena de texto. Por ejemplo, "hola" debería convertirse en
 "aloh".*/
-fun ej21(){
+fun ej21(texto: String) : String{
+    val res = texto.reversed()
 
+    var resultado = "Texto original: $texto\nTexto en reversa: $res"
+    return resultado
 }
 
 /*Ejercicio 22: Crea una función que, dado un número, devuelva True si es un número perfecto (la suma de
 sus divisores propios positivos es igual al número), o False en caso contrario.*/
-fun ej22(){
+fun ej22(num: Int) : String{
+    var sumDiv = 0
 
+    val mitad = num / 2
+    for (it in 1 .. mitad){
+        if (num % it == 0) sumDiv += it
+    }
+
+    val res = num == sumDiv
+
+    var resultado = "El numero $num "
+
+    if (!res) resultado += "no "
+
+    resultado += "es un numero perfecto"
+    return resultado
 }
 
 /*Ejercicio 23: Crea una función que, dado un número entero, devuelva True si es un número Armstrong (un
 número que es igual a la suma de sus propios dígitos elevados a una potencia). Por ejemplo, 153 es un
 número Armstrong porque 1^3 + 5^3 + 3^3 = 153.*/
-fun ej23(){
+fun ej23(num: Int) : String{
 
+    var
 }
 
 /*Ejercicio 24: Crea una función que encuentre el número más grande en una matriz bidimensional
