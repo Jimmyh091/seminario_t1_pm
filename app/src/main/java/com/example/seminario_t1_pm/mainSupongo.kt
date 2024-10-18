@@ -16,23 +16,23 @@ fun main(){
     ordenarEjercicios( 12, ej12(47574))
     ordenarEjercicios( 13, ej13("div.clasePrueba#idprefijado"))
     ordenarEjercicios( 14, ej14(6))
-    ordenarEjercicios( 15, ej15(intArrayOf(2,3,5,7,2), intArrayOf(2,7,5,5,2)))
+    ordenarEjercicios( 15, ej15(intArrayOf(2,3,5,7,2), intArrayOf(2,7,5,5,2) ))
     ordenarEjercicios( 16, ej16(intArrayOf(2,3,5,7,2)))
-    ordenarEjercicios( 17, ej17(intArrayOf(2,3,4,6,78,6,54,4,54,6,787,8,8,7,65,5,4,3)))
+    ordenarEjercicios( 17, ej17(intArrayOf(2,3,4,6,78,6,54,4,54,6,787,8,8,7,65,5,4,3) ))
     ordenarEjercicios( 18, ej18(877))
     ordenarEjercicios( 19, ej19("El pan, del latin panis, es un alimento basico de la dieta humana que se suele preparar mediante el horneado de una masa, elaborada fundamentalmente con harina de cereal, agua y sal. La mezcla, en la mayoria de las ocasiones, suele contener levaduras para que se fermente la masa y sea mas esponjosa y tierna."))
     ordenarEjercicios( 20, ej20(5))
     ordenarEjercicios( 21, ej21("nahuel"))
     ordenarEjercicios( 22, ej22(28))
-    ordenarEjercicios( 23, ej23(153))
+    ordenarEjercicios( 23, ej23(8085))
+    ordenarEjercicios( 24, ej24( arrayOf( intArrayOf(3,45,6,87,6,45,3,4,6,7), intArrayOf(3,45,6,87,6,45,3,4,6,7), intArrayOf(3,45,6,87,6,45,3,4,6,7) ) ))
+    ordenarEjercicios( 25, ej25( arrayOf( arrayOf(3,45,6,87,6,45,3,4,6,7), arrayOf(3,45,6,87,6,45,3,4,6,7), arrayOf(3,45,6,87,6,45,3,4,6,7) ) ))
+    ordenarEjercicios( 26, ej26( listOf("saljdf", "asdfawe", "as", "asdfawe", "a", "holo", "asdfawe", "AFJKSHD", "encefalografia", "jarbhaesbf") ))
+    ordenarEjercicios( 27, ej27( listOf("saljdf", "asdfawe", "as", "asdfawe", "a", "holo", "asdfawe", "AFJKSHD", "encefalografia", "jarbhaesbf") ))
+    ordenarEjercicios( 28, ej28("asfjlakj wfkj s askAHF KUWKajsb FHJ KAf h kh f "))
+    ordenarEjercicios( 29, ej29("twelve plus one", "eleven plus two"))
+    ordenarEjercicios( 30, ej30(6))
     /*
-    ordenarEjercicios( 24, )
-    ordenarEjercicios( 25, )
-    ordenarEjercicios( 26, )
-    ordenarEjercicios( 27, )
-    ordenarEjercicios( 28, )
-    ordenarEjercicios( 29, )
-    ordenarEjercicios( 30, )
     ordenarEjercicios( 31, )
     ordenarEjercicios( 32, )
     ordenarEjercicios( 33, )
@@ -522,7 +522,7 @@ fun ej23(num: Int) : String{
 
     var resultado = "El numero $num "
 
-    if (esAmstrong) resultado += "no "
+    if (!esAmstrong) resultado += "no "
 
     resultado += "es un numero Amstrong"
     return resultado
@@ -530,44 +530,169 @@ fun ej23(num: Int) : String{
 
 /*Ejercicio 24: Crea una función que encuentre el número más grande en una matriz bidimensional
 (una lista de listas).*/
-fun ej24(){
+fun ej24(matriz: Array<IntArray>) : String{
 
+    var res = matriz.get(0).get(0)
+
+    for (it in 0 until matriz.size){
+        for (it2 in matriz.get(it)){
+
+            if (it2 > res){
+                res = it2
+            }
+        }
+    }
+
+    var resultado = "El numero mas grande de la matriz es $res"
+    return resultado
 }
 
 /*Ejercicio 25: Crea una función que encuentre el número más pequeño en una matriz
 bidimensional (una lista de listas).*/
-fun ej25(){
+fun ej25(matriz: Array<Array<Int>>): String{
 
+    var res = matriz.get(0).get(0)
+
+    for (it in 0 until matriz.size){
+        for (it2 in matriz.get(it)){
+            if (res > it2) res = it2
+        }
+    }
+
+    var resultado = "El numero mas pequeno de la matriz es $res"
+    return resultado
 }
 
 /*Ejercicio 26: Crea una función que, dada una lista de palabras, devuelva la palabra más larga.*/
-fun ej26(){
+fun ej26(lista: List<String>): String{
+    var res = lista.get(0)
 
+    for (it in lista){
+        if (it.length > res.length) res = it
+    }
+
+    var resultado = "La palabra con mas letras es $res"
+    return resultado
 }
 
 /*Ejercicio 27: Crea una función que, dada una lista de palabras, devuelva la palabra más corta.*/
-fun ej27(){
+fun ej27(lista: List<String>): String{
+    var res = lista.get(0)
 
+    for (it in lista){
+        if (it.length < res.length) res = it
+    }
+
+    var resultado = "La palabra con menos letras es $res"
+    return resultado
 }
 
 /*Ejercicio 28: Crea una función que determine si una cadena de texto contiene solo
 caracteres alfabéticos (letras) y espacios en blanco.*/
-fun ej28(){
+fun ej28(texto: String) : String{
 
+    var todoIgual = true
+
+    for (it in texto){
+        if ((it < 'A' || it > 'z') || (it != ' ')){
+            todoIgual = false
+            break
+        }
+    }
+
+    var resultado = "La cadena de texto "
+
+    if (!todoIgual) resultado += "no "
+
+    resultado += "son todo letras y espacios"
+
+    return resultado
+}
+
+/*Ejercicio 28: Crea una función que determine si una cadena de texto contiene solo
+caracteres alfabéticos (letras) o espacios en blanco.*/
+fun ej28PeroSoyTontoYLoHiceMal(texto: String) : String{
+    var caracter = texto.get(0)
+    var esLetra = if (caracter == ' ') false else true
+
+    var todoIgual = true
+
+    for (it in texto){
+        if (esLetra){
+            if (it < 'A' || it > 'z'){
+                todoIgual = false
+                break
+            }
+        }else{
+            if (it != caracter){
+                todoIgual = false
+                break
+            }
+        }
+    }
+
+    var resultado = "La cadena de texto "
+
+    if (!todoIgual){
+        resultado += "no contiene los mismos caracteres"
+    }else{
+        resultado += "contiene todo "
+        if (esLetra) resultado += "letras"
+        else resultado += "espacios"
+    }
+
+    return resultado
 }
 
 /*Ejercicio 29: Crea una función que determine si una cadena de texto es un
 anagrama de otra cadena. Dos palabras son anagramas si tienen las mismas letras,
 pero en un orden diferente.*/
-fun ej29(){
+fun ej29(linea1: String, linea2: String) : String{
+    var mismasLetras = true
 
+    val lineaAux1 = linea1.lowercase().replace(" ", "")
+    val lineaAux2 = linea2.lowercase().replace(" ", "")
+
+    for (it in lineaAux1){
+        for (it2 in lineaAux2){
+            if (it == it2){
+                mismasLetras = true
+                break
+            } else {
+                mismasLetras = false
+            }
+        }
+
+        if (!mismasLetras) break
+    }
+
+    var resultado = "\"$linea1\" y \"$linea2\" "
+
+    if (!mismasLetras) resultado += "no "
+
+    resultado += "son anagramas"
+    return resultado
 }
 
 /*Ejercicio 30: Crea una función que, dado un número entero, devuelva True si es un
 número triangular (puede representarse como un triángulo equilátero de puntos), o
 False en caso contrario.*/
-fun ej30(){
+fun ej30(num: Int) : String{
 
+    var triangulo = 0
+    var n = 1
+
+    do {
+        triangulo = (n * (n + 1)) / 2
+        n++
+    }while (num > triangulo)
+
+    var resultado = "El numero $num "
+
+    if (triangulo != num) resultado += "no "
+
+    resultado += "es un numero tringular"
+    return resultado
 }
 
 
@@ -577,8 +702,9 @@ fun ej30(){
 Escribe una función que tome una lista de números y utilice la función map para
 duplicar cada número en la lista. La función debe devolver una nueva lista con
 todos los números duplicados.*/
-fun ej31(){
-
+fun ej31(lista: List<Int>){
+    lista.map { elto ->
+    }
 }
 
 /*Ejercicio 32: Crear un Diccionario a partir de Listas
